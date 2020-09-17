@@ -30,7 +30,8 @@ Route::put('/role-register-update/{id}','Admin\DashboardController@registerupdat
 Route::delete('/role-delete/{id}','Admin\DashboardController@registerdelete');
 
 
-Route::resource('blogs','blogController');
+Route::resource('rooms','roomController');
+
 
 
 

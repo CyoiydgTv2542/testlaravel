@@ -1,8 +1,8 @@
 <?php
 namespace App\Http\Controllers;
-use App\Blog;
+use App\Room;
 use Illuminate\Http\Request;
-class blogController extends Controller
+class roomController extends Controller
 {
 /**
 * Display a listing of the resource.
@@ -11,8 +11,8 @@ class blogController extends Controller
 */
 public function index()
 {
-$blogs = Blog::orderby('id', 'desc')->get();
-return view('blogs.index',compact('blogs'));
+$rooms = Room::orderby('id', 'desc')->get();
+return view('rooms.index',compact('rooms'));
 }
 /**
 * Show the form for creating a new resource.
@@ -21,7 +21,7 @@ return view('blogs.index',compact('blogs'));
 */
 public function create()
 {
-return view('blogs.create');
+return view('rooms.create');
 }
 /**
 * Store a newly created resource in storage.
@@ -32,15 +32,16 @@ return view('blogs.create');
 public function store(Request $request)
 {
 $request->validate([
-'title' => 'required',
+'coderoom'=>'required',
+'name' => 'required',
 'locate' => 'required',
 'size' => 'required',
 'image' => 'required',
-'content' => 'required',
+'advice' => 'required',
 ]);
-Blog::create($request->all());
-return redirect()->route('blogs.index')
-->with('success','blogs created successfully.');
+Room::create($request->all());
+return redirect()->route('rooms.index')
+->with('success','rooms created successfully.');
 }
 /**
 * Display the specified resource.
@@ -48,9 +49,9 @@ return redirect()->route('blogs.index')
 * @param \App\Blog $blog
 * @return \Illuminate\Http\Response
 */
-public function show(Blog $blog)
+public function show(room $room)
 {
-return view('blogs.show',compact('blog'));
+return view('rooms.show',compact('room'));
 }
 /**
 * Show the form for editing the specified resource.
@@ -58,9 +59,9 @@ return view('blogs.show',compact('blog'));
 * @param \App\Blog $blog
 * @return \Illuminate\Http\Response
 */
-public function edit(Blog $blog)
+public function edit(room $room)
 {
-return view('blogs.edit',compact('blog'));
+return view('rooms.edit',compact('room'));
 }
 /**
 * Update the specified resource in storage.
@@ -69,18 +70,19 @@ return view('blogs.edit',compact('blog'));
 * @param \App\Blog $blog
 * @return \Illuminate\Http\Response
 */
-public function update(Request $request, Blog $blog)
+public function update(Request $request, room $room)
 {
 $request->validate([
-    'title' => 'required',
+    'coderoom'=>'required',
+    'name' => 'required',
     'locate' => 'required',
     'size' => 'required',
     'image' => 'required',
-    'content' => 'required',
+    'advice' => 'required',
 ]);
-$blog->update($request->all());
-return redirect()->route('blogs.index')
-->with('success','blogs updated successfully');
+$room->update($request->all());
+return redirect()->route('rooms.index')
+->with('success','แก้ไขข้อมูลเสร็จสิ้น');
 }
 /**
 * Remove the specified resource from storage.
@@ -88,10 +90,10 @@ return redirect()->route('blogs.index')
 * @param \App\Blog $blog
 * @return \Illuminate\Http\Response
 */
-public function destroy(Blog $blog)
+public function destroy(room $room)
 {
-$blog->delete();
-return redirect()->route('blogs.index')
-->with('success','Blog deleted successfully');
+$room->delete();
+return redirect()->route('rooms.index')
+->with('success','ลบข้อมูลเสร็จสิ้น');
 }
 }

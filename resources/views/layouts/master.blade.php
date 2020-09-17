@@ -116,10 +116,10 @@
               </li>
 
               <li class="nav-item has-treeview">
-                <a href="blogs" class="nav-link">
+                <a href="rooms" class="nav-link">
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
-                    บัททึกข้อมูล
+                    บัททึกข้อมูลห้อง
                     <span class="badge badge-info right"></span>
                   </p>
                 </a>
@@ -141,13 +141,6 @@
      @yield('content')
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.5
-    </div>
-  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

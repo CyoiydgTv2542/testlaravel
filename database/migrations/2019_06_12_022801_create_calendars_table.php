@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBlogsTable extends Migration
+class CreateCalendarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateBlogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('calendars', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('locate');
-            $table->string('size');
-            $table->string('image');
-            $table->text('content');
+            $table->string('event_name');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->timestamps();
-            });
+        });
     }
 
     /**
@@ -31,6 +29,6 @@ class CreateBlogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('calendars');
     }
 }
