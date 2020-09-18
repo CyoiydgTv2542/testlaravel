@@ -20,8 +20,8 @@
 <strong> รูปภาพ : </strong>
 {{ $room->image }}
 <br>
-<a href="{{ asset('images/'.$room->image)}}"  >
-<img src="{{ asset('images/'.$room->image)}}"style="width:300px" data-lity ></a>
+<a href="{{ asset('images/'.$room->image) }}"  >
+<img src="{{ asset('images/'.$room->image) }}"style="width:300px" data-lity ></a>
 </br>
 
 <div class="col-xs-12 col-sm-12 col-md-12">

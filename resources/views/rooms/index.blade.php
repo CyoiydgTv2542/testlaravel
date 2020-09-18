@@ -4,7 +4,6 @@
 <div class="col-lg-12 margin-tb">
 <div class="pull-left">
     <center><h2>ห้องประชุม</h2></center>
-
 </div>
 <div class="pull-right">
 <a class="btn btn-success" href="{{ route('rooms.create') }}"> เพิ่มข้อมูล</a>
@@ -16,6 +15,7 @@
 <p>{{ $message }}</p>
 </div>
 @endif
+
 <table class="table table-bordered">
 <tr>
 
